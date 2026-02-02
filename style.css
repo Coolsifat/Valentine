@@ -93,6 +93,7 @@ body {
 }
 
 .letter-window{
+    position: relative;
     width: 90vw;
     max-width: 800px;
     aspect-ratio: 3/2;
@@ -189,4 +190,8 @@ display: inline-block;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
 }
-
+.no-btn, .btn {
+  min-height: 44px;
+  padding: 12px 18px;
+  font-size: 18px;
+}
