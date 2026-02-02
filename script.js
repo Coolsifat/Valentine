@@ -26,18 +26,28 @@ envelope.addEventListener("click", () => {
 
 // Logic to move the NO btn
 
-noBtn.addEventListener("mouseover", () => {
-    const min = 200;
-    const max = 200;
+// Logic to move the NO btn (stay inside pink window)
 
-    const distance = Math.random() * (max - min) + min;
-    const angle = Math.random() * Math.PI * 2;
+const letterWindow = document.querySelector(".letter-window");
 
-    const moveX = Math.cos(angle) * distance;
-    const moveY = Math.sin(angle) * distance;
+letterWindow.style.position = "relative"; // ensure boundary
 
-    noBtn.style.transition = "transform 0.3s ease";
-    noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+noBtn.addEventListener("mouseenter", () => {
+    const windowRect = letterWindow.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+
+    const padding = 10;
+
+    const maxX = windowRect.width - btnRect.width - padding;
+    const maxY = windowRect.height - btnRect.height - padding;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = `${randomX}px`;
+    noBtn.style.top = `${randomY}px`;
+    noBtn.style.transition = "left 0.25s ease, top 0.25s ease";
 });
 
 
