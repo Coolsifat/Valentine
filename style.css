@@ -1,55 +1,3 @@
-/* Mobile-friendly defaults */
-* { box-sizing: border-box; }
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  /* Prevent weird horizontal scrolling on small screens */
-  overflow-x: hidden;
-
-  /* Helps buttons feel snappier on mobile */
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Make images scale down on phones */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Better tap targets */
-button, .btn, .button {
-  min-height: 44px;        /* Apple recommended tap size */
-  padding: 12px 18px;
-  font-size: clamp(16px, 4vw, 20px);
-  touch-action: manipulation; /* reduces delays */
-}
-
-/* If you have a main container, force it to fit nicely */
-.container, .card, .wrapper, main {
-  width: min(92vw, 560px);
-  margin: 0 auto;
-  padding: 16px;
-}
-
-/* Responsive spacing for small screens */
-@media (max-width: 480px) {
-  h1, .title {
-    font-size: clamp(22px, 6vw, 32px);
-  }
-
-  /* If your buttons are side-by-side, stack them on small screens */
-  .buttons, .btn-row, .actions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
-  }
-}
 body {
     margin: 0;
     height: 100vh;
@@ -93,7 +41,6 @@ body {
 }
 
 .letter-window{
-    position: relative;
     width: 90vw;
     max-width: 800px;
     aspect-ratio: 3/2;
@@ -189,9 +136,4 @@ display: inline-block;
     padding: 10px 20px;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
-}
-.no-btn, .btn {
-  min-height: 44px;
-  padding: 12px 18px;
-  font-size: 18px;
 }
