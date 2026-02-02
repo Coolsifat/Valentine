@@ -137,11 +137,4 @@ display: inline-block;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
 }
-.letter-window {
-  overflow: hidden;
-  position: relative;
-}
 
-.no-btn {
-  position: absolute;
-}
